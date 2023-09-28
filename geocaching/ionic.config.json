@@ -1,0 +1,7 @@
+{
+  "name": "geocaching",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
