@@ -11,6 +11,14 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'lugar',
+    loadChildren: () => import('./lugar/lugar.module').then( m => m.LugarPageModule)
+  },
+  {
+    path: 'tercera',
+    loadChildren: () => import('./tercera/tercera.module').then( m => m.TerceraPageModule)
+  },
 ];
 
 @NgModule({
