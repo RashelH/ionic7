@@ -19,6 +19,14 @@ const routes: Routes = [
     path: 'tercera',
     loadChildren: () => import('./tercera/tercera.module').then( m => m.TerceraPageModule)
   },
+  {
+    path: 'tabs',
+    loadChildren: () => import('./tabs/tabs.module').then( m => m.TabsPageModule)
+  },
+  {
+    path: 'perfil',
+    loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule)
+  },
 ];
 
 @NgModule({
