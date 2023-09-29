@@ -28,6 +28,7 @@ export class LoginPage implements OnInit {
       this.modalCtrl.dismiss();
       localStorage.setItem('loginData', JSON.stringify(response));
     } catch (error) {
+      console.error('Error al iniciar sesión con Facebook:', error);
     }
   }
 
