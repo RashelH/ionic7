@@ -1,13 +1,37 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>tabs</ion-title>
+    <ion-title>Feed</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">tabs</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-content>
+    <ion-list>
+      <ion-item *ngFor="let lugar of lugares">
+        <ion-label>
+          <h2> {{lugar.nombre}} </h2><br>
+          <h3> {{lugar.direccion}} </h3><br>
+          <p> {{lugar.categoria}} </p>
+        </ion-label>
+        <ion-buttons slot="end">
+          <ion-button color="primary" (click)="editarLugar(lugar.id)">
+            <ion-icon name="create-outline"></ion-icon>
+          </ion-button>          
+          <ion-button color="danger" (click)="eliminarLugar(lugar.id)">
+            <ion-icon name="trash-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-item>
+    </ion-list>
+    
+
+  
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button (click)="irAVistaDeDetalle()">
+        <ion-icon name="add-circle"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+
+  </ion-content>
 </ion-content>

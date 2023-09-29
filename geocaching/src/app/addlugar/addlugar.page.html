@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> 
+      {{ editar ? 'Editar Lugar' : 'Agregar Lugar' }}  
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large"> 
+        {{ editar ? 'Editar Lugar' : 'Agregar Lugar' }}
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-item>
+    <ion-label position="floating"> Nombre del Lugar </ion-label>
+    <ion-input type="texto" [(ngModel)]="lugar.nombre"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label position="floating"> Dirección </ion-label>
+    <ion-textarea type="texto" [(ngModel)]="lugar.direccion" ></ion-textarea>
+  </ion-item>
+
+  <ion-list>
+    <ion-item>
+      <ion-select label="Categoría" label-placement="categoria" [(ngModel)]="lugar.categoria">
+        <ion-select-option value="AireLibre"> Aire Libre </ion-select-option>
+        <ion-select-option value="LugarCerrado"> Lugar Cerrado </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-item>
+    <ion-label position="floating"> Descripción </ion-label>
+    <ion-textarea [(ngModel)]="lugar.descripcion"></ion-textarea>
+  </ion-item>
+
+  <ion-button expand="full" (click)="guardarLugar()" >
+    {{ editar ? 'Guardar Cambios ' : ' Agregar Lugar '}}
+   </ion-button>
+
+</ion-content>
